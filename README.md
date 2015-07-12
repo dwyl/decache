@@ -29,7 +29,22 @@ npm install decache --save-dev
 ### Use it in your code:
 
 ```js
-var decache  = require('decache');
+// require the decache module:
+var decache = require('decache');
 
+// require a module that you wrote"
+var mymod = require(__dirname + '/mymodule.js');
 
+// use your module the way you need to:
+console.log(mymod.count()); // 0   (the initial state for our counter is zero)
+console.log(mymod.incrementRunCount()); // 1
+
+// if your module has an initial state that you want to re-set:
+mymod = require(__dirname + '/mymodule.js'); // fresh start
+console.log(mymod.count()); // 0   (back to initial state ... zero)
 ```
+
+If you have any questions or need more examples, please create a GitHub issue:
+https://github.com/nelsonic/decache/issues
+
+_**Thanks**_!
