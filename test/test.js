@@ -1,6 +1,6 @@
 // awesome tests here!
 var test     = require('tape'); // the reliable testing framework
-var decache  = require('../decache.js').decache;
+var decache  = require('../decache.js');
 var mymodule = require(__dirname + '/mymodule');
 
 console.log(mymodule.count);

@@ -45,4 +45,4 @@ require.searchCache = function (moduleName, callback) {
     }
 };
 
-module.exports = require;
+module.exports = require.decache;
