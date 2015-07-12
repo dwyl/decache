@@ -1,6 +1,5 @@
 /**
- * Removes a module from the node.js require cache.
- * We need this to re-load any module we need to be in an inital state
+ * Removes a module from the cache. We need this to re-load our http_request !
  * see: http://stackoverflow.com/a/14801711/1148249
  */
 require.decache = function (moduleName) {
@@ -28,7 +27,8 @@ require.searchCache = function (moduleName, callback) {
     var mod = require.resolve(moduleName);
 
     // Check if the module has been resolved and found within
-    // the cache
+    // the cache no else so #ignore else http://git.io/vtgMI
+    /* istanbul ignore else  */
     if (mod && ((mod = require.cache[mod]) !== undefined)) {
         // Recursively go over the results
         (function run(mod) {
