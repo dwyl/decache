@@ -5,8 +5,8 @@ var mymodule = require('../lib/mymodule');
 
 console.log(mymodule.count);
 
-test('Expect mymodule.count initial state to be 0', function(t) {
-  t.equal(mymodule.get(), 0, 'count is false! (we have not run this)');
+test('Expect mymodule.count initial state to be false', function(t) {
+  t.equal(mymodule.get(), false, 'count is false! (we have not run this)');
   t.end();
 });
 
@@ -31,8 +31,18 @@ test('There\'s no going back to initial (runcount) state!', function(t) {
 
 test('Delete Require Cache for mymodule to re-set the runcount!', function(t) {
   decache('../lib/mymodule'); // exercise the decache module
+  var other = require('../lib/othermodule.js');
+  decache('../lib/othermodule.js');
   mymodule = require('../lib/mymodule');
   var runcount = mymodule.get();
-  t.equal(runcount, 0, 'runcount is zero! (as epxected)');
+  t.equal(runcount, false, 'runcount is false! (as epxected)');
+  t.end();
+});
+
+test('Require an npm (non local) module', function(t) {
+  var ts = require('tap-spec');
+  decache('tap-spec');
+  var keys = Object.keys(require.cache);
+  t.equal(keys.indexOf('tap-spec'), -1, 'tap-spec no longer in require-cache');
   t.end();
 });
