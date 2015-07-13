@@ -33,17 +33,17 @@ npm install decache --save-dev
 var decache = require('decache');
 
 // require a module that you wrote"
-var mymod = require(__dirname + '/mymodule.js');
+var mymod = require('./mymodule.js');
 
 // use your module the way you need to:
 console.log(mymod.count()); // 0   (the initial state for our counter is zero)
 console.log(mymod.incrementRunCount()); // 1
 
 // delete the cached module:
-decache(__dirname + '/mymodule.js');
+decache('./mymodule.js');
 
 //
-mymod = require(__dirname + '/mymodule.js'); // fresh start
+mymod = require('./mymodule.js'); // fresh start
 console.log(mymod.count()); // 0   (back to initial state ... zero)
 ```
 
