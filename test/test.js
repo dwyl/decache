@@ -11,7 +11,7 @@ test('Expect mymodule.count initial state to be false', function(t) {
 });
 
 test('Increment the value of the count so its 1 (one)', function(t) {
-  var runcount = mymodule.exec();
+  var runcount = mymodule.set();
   t.equal(runcount, 1, 'runcount is one! (as expected)');
   t.end();
 });

@@ -5,15 +5,10 @@ var find = require('find'); // https://www.npmjs.com/package/find
 require.getRootDir = function () {
   var keys = Object.keys(require.cache);
   var parent = keys[0]; // the module that required decache
-  // console.log(' - - - - > parent: '+parent);
-  // console.log(' - - - - > dirname: '+__dirname);
-  // console.log(' - - - - > appDir: '+appDir);
   /* istanbul ignore else  */
   if(parent.indexOf('node_modules') > -1) {
     var end = parent.indexOf('node_modules');
-    // console.log("END:" + end);
     parent = parent.substring(0, end);
-    // console.log(' - - - - - > parent (AFTER): '+parent);
   }
 
   return parent;
@@ -37,7 +32,6 @@ require.find = function (moduleName) {
     }
     // var root = path.resolve(path.normalize(__dirname +'../../..'));
     var parent = require.getRootDir();
-    console.log(' - - - - - > parent: '+parent);
     var re = new RegExp(mod,"g"); // regex to use when finding the file
     var files = find.fileSync(re, parent);
     var file;
@@ -49,7 +43,6 @@ require.find = function (moduleName) {
         break;
       }
     }
-    console.log(" - - - - - - - - - -> file: " + file)
     return file;
   } else {
     return moduleName;
@@ -61,7 +54,6 @@ require.find = function (moduleName) {
  * see: http://stackoverflow.com/a/14801711/1148249
  */
 require.decache = function (moduleName) {
-  console.log(' - - - -> moduleName: '+moduleName +" < - - - - - - - ");
     moduleName = require.find(moduleName);
     // Run over the cache looking for the files
     // loaded by the specified module name
