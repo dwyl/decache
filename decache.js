@@ -1,8 +1,47 @@
+var path = require('path'); // if module is locally defined we path.resolve it
+var find = require('find'); // https://www.npmjs.com/package/find
+
+require.find = function (moduleName) {
+  // a locally defined module
+  if(moduleName.indexOf('/') > -1) {
+    // console.log("BEFORE: "+moduleName);
+    var last = moduleName.lastIndexOf('/');
+    // strip everything before the forward slash
+    moduleName = moduleName.substring(last, moduleName.length).replace('/', '');
+    // console.log('AFTER: '+moduleName);
+    var keys = Object.keys(require.cache);
+    var parent = keys[0]; // the module that required decache
+
+    var mod;
+    if(moduleName.indexOf('.js') === -1) {
+      mod = moduleName + '\.js'; // append .js to file type
+    }
+    else {
+      mod = moduleName.replace('.js', '\.js'); // escape .js for regex
+    }
+    var root = path.resolve(path.normalize(parent +'../../..'));
+    var re = new RegExp(mod,"g"); // regex to use when finding the file
+    var files = find.fileSync(re, root);
+    var file;
+    for (var i = 0; i < files.length; i++) {
+      var f = files[i];
+      if(keys.indexOf(f) > -1) {
+        file = f;
+        break;
+      }
+    }
+    return file;
+  } else {
+    return moduleName;
+  }
+}
+
 /**
  * Removes a module from the cache. We need this to re-load our http_request !
  * see: http://stackoverflow.com/a/14801711/1148249
  */
 require.decache = function (moduleName) {
+    moduleName = require.find(moduleName);
     // Run over the cache looking for the files
     // loaded by the specified module name
     require.searchCache(moduleName, function (mod) {

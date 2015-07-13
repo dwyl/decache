@@ -39,7 +39,10 @@ var mymod = require(__dirname + '/mymodule.js');
 console.log(mymod.count()); // 0   (the initial state for our counter is zero)
 console.log(mymod.incrementRunCount()); // 1
 
-// if your module has an initial state that you want to re-set:
+// delete the cached module:
+decache(__dirname + '/mymodule.js');
+
+//
 mymod = require(__dirname + '/mymodule.js'); // fresh start
 console.log(mymod.count()); // 0   (back to initial state ... zero)
 ```
@@ -47,4 +50,4 @@ console.log(mymod.count()); // 0   (back to initial state ... zero)
 If you have any questions or need more examples, please create a GitHub issue:
 https://github.com/nelsonic/decache/issues
 
-_**Thanks**_!
+***Thanks***!

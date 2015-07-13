@@ -1,7 +1,7 @@
 // awesome tests here!
 var test     = require('tape'); // the reliable testing framework
 var decache  = require('../decache.js');
-var mymodule = require(__dirname + '/mymodule');
+var mymodule = require('../lib/mymodule');
 
 console.log(mymodule.count);
 
@@ -30,8 +30,8 @@ test('There\'s no going back to initial (runcount) state!', function(t) {
 });
 
 test('Delete Require Cache for mymodule to re-set the runcount!', function(t) {
-  decache(__dirname + '/mymodule'); // exercise the decache module
-  mymodule = require(__dirname + '/mymodule');
+  decache('../lib/mymodule'); // exercise the decache module
+  mymodule = require('../lib/mymodule');
   var runcount = mymodule.get();
   t.equal(runcount, 0, 'runcount is zero! (as epxected)');
   t.end();
