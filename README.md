@@ -1,5 +1,11 @@
 # decache
 
+[![Build Status](https://travis-ci.org/dwyl/decache.svg)](https://travis-ci.org/dwyl/decache)
+[![Test Coverage](https://codeclimate.com/github/dwyl/decache/badges/coverage.svg)](https://codeclimate.com/github/dwyl/decache/coverage)
+[![Code Climate](https://codeclimate.com/github/dwyl/decache/badges/gpa.svg)](https://codeclimate.com/github/dwyl/decache)
+[![Dependency Status](https://david-dm.org/dwyl/decache.svg)](https://david-dm.org/dwyl/decache)
+[![devDependency Status](https://david-dm.org/dwyl/decache/dev-status.svg)](https://david-dm.org/dwyl/decache#info=devDependencies)
+
 In node.js when you `require()` a module, node stores a cached version of the
 module, so that all subsequent calls to `require()` do not have to reload
 the module from the filesystem.
