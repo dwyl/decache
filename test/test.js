@@ -46,3 +46,18 @@ test('Require an npm (non local) module', function(t) {
   t.equal(keys.indexOf('tap-spec'), -1, 'tap-spec no longer in require-cache');
   t.end();
 });
+
+test('Fake relative parent module', function(t) {
+  var keys = Object.keys(require.cache);
+  var p = keys[0]; // the module that required decache
+  var obj = require.cache[p];
+  console.log(" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+  require.cache = {};
+  require.cache[__filename] = obj;
+  console.log(require.cache);
+  var other = require('../lib/othermodule.js');
+  decache('../lib/othermodule.js');
+  keys = Object.keys(require.cache);
+  t.equal(keys.indexOf('othermodule.js'), -1, 'fake parent not in require.cache');
+  t.end();
+});

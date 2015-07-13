@@ -9,12 +9,14 @@ require.getRootDir = function () {
   if(parent.indexOf('node_modules') > -1) {
     var end = parent.indexOf('node_modules');
     parent = parent.substring(0, end);
+  } else {
+    parent = path.resolve(path.normalize(parent +'../../..')); // resolve up!
   }
-
   return parent;
 }
 
 require.find = function (moduleName) {
+  var parent = require.getRootDir();
   // a locally defined module
   if(moduleName.indexOf('/') > -1) {
     // console.log("BEFORE: "+moduleName);
@@ -30,8 +32,7 @@ require.find = function (moduleName) {
     else {
       mod = moduleName.replace('.js', '\.js'); // escape .js for regex
     }
-    // var root = path.resolve(path.normalize(__dirname +'../../..'));
-    var parent = require.getRootDir();
+
     var re = new RegExp(mod,"g"); // regex to use when finding the file
     var files = find.fileSync(re, parent);
     var file;
