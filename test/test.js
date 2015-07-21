@@ -5,6 +5,18 @@ var mymodule = require('../lib/mymodule');
 
 console.log(mymodule.count);
 
+test('Expect decache to do nothing if the module name does not exist', function(t) {
+
+  try {
+    decache('./non-existing-module');
+    t.pass('No error thrown');
+    t.end();
+  } catch (e) {
+    t.fail('This should have not throw an error');
+    t.end();
+  }
+});
+
 test('Expect mymodule.count initial state to be false', function(t) {
   t.equal(mymodule.get(), false, 'count is false! (we have not run this)');
   t.end();
