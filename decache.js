@@ -55,7 +55,11 @@ require.find = function (moduleName) {
  * see: http://stackoverflow.com/a/14801711/1148249
  */
 require.decache = function (moduleName) {
+
     moduleName = require.find(moduleName);
+
+    if(!moduleName) {return;}
+
     // Run over the cache looking for the files
     // loaded by the specified module name
     require.searchCache(moduleName, function (mod) {
