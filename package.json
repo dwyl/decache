@@ -45,6 +45,6 @@
     "codeclimate"
   ],
   "dependencies": {
-    "find": "^0.2.2"
+    "find": "^0.2.4"
   }
 }
