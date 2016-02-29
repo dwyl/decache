@@ -1,14 +1,13 @@
 {
   "name": "decache",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "decache (Delete Cache) lets you delete modules from node.js require() cache; useful when testing your modules/projects.",
   "main": "decache.js",
   "scripts": {
     "nocov": "./node_modules/tape/bin/tape ./test/test.js",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*.js",
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*.js && ./node_modules/.bin/istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
-    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore .",
-    "codeclimate": "CODECLIMATE_REPO_TOKEN=f464480ed012b5b920ac187b1be2b4f7c30c1bb290cec6cdae19d5308747ccee ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./coverage/lcov.info"
+    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc --exclude-path .gitignore ."
   },
   "repository": {
     "type": "git",
@@ -32,19 +31,17 @@
     "test": "test"
   },
   "devDependencies": {
-    "codeclimate-test-reporter": "0.1.0",
-    "istanbul": "^0.3.17",
-    "jshint": "^2.8.0",
-    "pre-commit": "^1.0.10",
-    "tap-spec": "^4.0.2",
-    "tape": "^4.0.0"
+    "istanbul": "^0.4.2",
+    "jshint": "^2.9.1",
+    "pre-commit": "^1.1.2",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.4.0"
   },
   "pre-commit": [
     "jshint",
-    "coverage",
-    "codeclimate"
+    "coverage"
   ],
   "dependencies": {
-    "find": "^0.2.2"
+    "find": "^0.2.4"
   }
 }

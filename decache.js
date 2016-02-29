@@ -39,7 +39,7 @@ require.find = function (moduleName) {
     var keys = Object.keys(require.cache);
     for (var i = 0; i < files.length; i++) {
       var f = files[i];
-      if(keys.indexOf(f) > -1) {
+      if(keys.indexOf(f) > -1) { // won't this *always* be true?
         file = f;
         break;
       }
