@@ -1,6 +1,6 @@
 {
   "name": "decache",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "decache (Delete Cache) lets you delete modules from node.js require() cache; useful when testing your modules/projects.",
   "main": "decache.js",
   "scripts": {
@@ -21,8 +21,8 @@
     "uncache",
     "un-require"
   ],
-  "author": "@nelsonic & friends! (with help from StackOverflow)",
-  "license": "GPL-2.0",
+  "author": "@besarthoxhaj & @nelsonic (with help from StackOverflow)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dwyl/decache/issues"
   },
