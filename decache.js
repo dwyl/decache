@@ -1,5 +1,4 @@
 var path = require('path'); // if module is locally defined we path.resolve it
-var appDir = path.dirname(require.main.filename);
 var find = require('find'); // https://www.npmjs.com/package/find
 
 require.getRootDir = function () {
