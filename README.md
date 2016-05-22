@@ -53,6 +53,8 @@ mymod = require('./mymodule.js'); // fresh start
 console.log(mymod.count()); // 0   (back to initial state ... zero)
 ```
 
+Modules other than `.js`, like for example, `.jsx`, are supported as well.
+
 If you have any questions or need more examples, please create a GitHub issue:
 https://github.com/nelsonic/decache/issues
 

@@ -25,11 +25,12 @@ require.find = function (moduleName) {
     // console.log('AFTER: '+moduleName);
 
     var mod;
-    if(moduleName.indexOf('.js') === -1) {
-      mod = moduleName + '\.js'; // append .js to file type
+    var ext = path.extname(moduleName);
+    if(ext === '') {
+      mod = moduleName + '\.js'; // append .js to file type by default
     }
     else {
-      mod = moduleName.replace('.js', '\.js'); // escape .js for regex
+      mod = moduleName.replace(ext, '\\' + ext); // escape extension for regex
     }
 
     var re = new RegExp(mod,"g"); // regex to use when finding the file
