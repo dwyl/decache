@@ -40,8 +40,5 @@
   "pre-commit": [
     "jshint",
     "coverage"
-  ],
-  "dependencies": {
-    "find": "^0.2.4"
-  }
+  ]
 }
