@@ -37,5 +37,8 @@
   },
   "pre-commit": [
     "coverage"
-  ]
+  ],
+  "dependencies": {
+    "callsite": "^1.0.0"
+  }
 }

@@ -1,5 +1,6 @@
 // awesome tests here!
 var test     = require('tape'); // the reliable testing framework
+var setup    = require('../setup'); // ensure decache is pre-loaded
 var decache  = require('../decache.js');
 var mymodule = require('../lib/mymodule');
 
