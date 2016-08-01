@@ -1,8 +1,16 @@
 var path = require('path'); // if module is locally defined we path.resolve it
+var callsite = require('callsite');
 
 require.find = function (moduleName) {
   if (moduleName[0] === '.') {
-    moduleName = path.resolve(path.dirname(module.parent.filename), moduleName);
+    var stack = callsite();
+    for (var i in stack) {
+      var filename = stack[i].getFileName();
+      if (filename !== module.filename) {
+        moduleName = path.resolve(path.dirname(filename), moduleName);
+        break;
+      }
+    }
   }
   try {
     return require.resolve(moduleName);
