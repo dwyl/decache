@@ -51,28 +51,26 @@ require.decache = function (moduleName) {
 require.searchCache = function (moduleName, callback) {
     // Resolve the module identified by the specified name
     var mod = require.resolve(moduleName);
+    var visited = {};
 
     // Check if the module has been resolved and found within
     // the cache no else so #ignore else http://git.io/vtgMI
     /* istanbul ignore else */
     if (mod && ((mod = require.cache[mod]) !== undefined)) {
         // Recursively go over the results
-        (function run(mod) {
+        (function run(current) {
+            visited[current.id] = true;
             // Go over each of the module's children and
             // run over it
-            mod.children.forEach(function (child) {
-                // Prevent infinite recursion
-                /* istanbul ignore next */
-                if (child.parent === mod) {
-                  return;
-                } else {
-                  run(child);
+            current.children.forEach(function (child) {
+                if (!visited[child.id]) {
+                    run(child);
                 }
             });
 
             // Call the specified callback providing the
             // found module
-            callback(mod);
+            callback(current);
         })(mod);
     }
 };
