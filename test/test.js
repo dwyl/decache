@@ -76,8 +76,10 @@ test('Fake relative parent module', function(t) {
 });
 
 test('.node extensions are ignored', function(t) {
-  var nativeMod = require('node-report');
-  decache('node-report');
-  t.doesNotThrow(function() {require('node-report')});
+  require('modern-syslog');
+  decache('modern-syslog');
+  t.doesNotThrow(function() {
+      require('modern-syslog');
+  });
   t.end();
 });
