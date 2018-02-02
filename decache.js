@@ -63,7 +63,9 @@ require.searchCache = function (moduleName, callback) {
             // Go over each of the module's children and
             // run over it
             current.children.forEach(function (child) {
-                if (!visited[child.id]) {
+                // ignore .node files, decachine native modules throws a
+                // "module did not self-register" error on second require
+                if (path.extname(child.filename) !== '.node' && !visited[child.id]) {
                     run(child);
                 }
             });

@@ -74,3 +74,10 @@ test('Fake relative parent module', function(t) {
   t.equal(keys.indexOf('othermodule.js'), -1, 'fake parent not in require.cache');
   t.end();
 });
+
+test('.node extensions are ignored', function(t) {
+  var nativeMod = require('node-report');
+  decache('node-report');
+  t.doesNotThrow(function() {require('node-report')});
+  t.end();
+});
