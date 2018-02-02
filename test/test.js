@@ -74,3 +74,12 @@ test('Fake relative parent module', function(t) {
   t.equal(keys.indexOf('othermodule.js'), -1, 'fake parent not in require.cache');
   t.end();
 });
+
+test('.node extensions are ignored', function(t) {
+  require('modern-syslog');
+  decache('modern-syslog');
+  t.doesNotThrow(function() {
+      require('modern-syslog');
+  });
+  t.end();
+});
