@@ -37,11 +37,15 @@ require.decache = function (moduleName) {
 
     // Remove cached paths to the module.
     // Thanks to @bentael for pointing this out.
-    Object.keys(module.constructor._pathCache).forEach(function(cacheKey) {
+    Object.keys(module.constructor._pathCache || {}).forEach(function(cacheKey) {
         if (cacheKey.indexOf(moduleName)>0) {
             delete module.constructor._pathCache[cacheKey];
         }
     });
+
+    if(typeof jest !== "undefined"){
+        jest.resetModules();
+    }
 };
 
 /**
