@@ -1,10 +1,14 @@
-# decache
+# `decache`
 
-[![Build Status](https://travis-ci.org/dwyl/decache.svg)](https://travis-ci.org/dwyl/decache)
-[![codecov.io](https://codecov.io/github/dwyl/decache/coverage.svg?branch=master)](https://codecov.io/github/dwyl/decache?branch=master)
-[![Code Climate](https://codeclimate.com/github/dwyl/decache/badges/gpa.svg)](https://codeclimate.com/github/dwyl/decache)
-[![Dependency Status](https://david-dm.org/dwyl/decache.svg)](https://david-dm.org/dwyl/decache)
-[![devDependency Status](https://david-dm.org/dwyl/decache/dev-status.svg)](https://david-dm.org/dwyl/decache#info=devDependencies)
+Delete a module from node.js' `require.cache` so you can freshly `require` it again.
+
+[![Build Status](https://img.shields.io/travis/dwyl/decache/master.svg?style=flat-square)](https://travis-ci.org/dwyl/decache)
+[![codecov.io](https://img.shields.io/codecov/c/github/dwyl/decache/master.svg?style=flat-square)](http://codecov.io/github/dwyl/decache?branch=master)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/dwyl/decache.svg?style=flat-square)](https://github.com/dwyl/decache)
+[![Dependencies Status](https://david-dm.org/dwyl/decache/status.svg?style=flat-square)](https://david-dm.org/dwyl/decache)
+[![devDependencies Status](https://david-dm.org/dwyl/decache/dev-status.svg?style=flat-square)](https://david-dm.org/dwyl/decache?type=dev)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/dwyl/decache/issues)
+[![HitCount](http://hits.dwyl.io/dwyl/decache.svg)](http://hits.dwyl.io/dwyl/decache)
 
 In node.js when you `require()` a module, node stores a cached version of the
 module, so that all subsequent calls to `require()` do not have to reload
@@ -24,7 +28,7 @@ An easy way to delete a cached module.
 
 ## How? (_usage_)
 
-### install
+### install
 
 Install the module from npm:
 
