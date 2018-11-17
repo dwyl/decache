@@ -1,6 +1,6 @@
 {
   "name": "decache",
-  "version": "4.4.1",
+  "version": "4.5.0",
   "description": "decache (Delete Cache) lets you delete modules from node.js require() cache; useful when testing your modules/projects.",
   "main": "decache.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "uncache",
     "un-require"
   ],
-  "author": "@besarthoxhaj, @jupiter & @nelsonic (with help from StackOverflow)",
+  "author": "https://github.com/dwyl/decache/graphs/contributors",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dwyl/decache/issues"
@@ -30,11 +30,11 @@
     "test": "test"
   },
   "devDependencies": {
-    "istanbul": "^0.4.4",
+    "istanbul": "^0.4.5",
     "modern-syslog": "~1.1.4",
-    "pre-commit": "^1.1.3",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.6.0"
+    "pre-commit": "^1.2.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
   },
   "pre-commit": [
     "coverage"
