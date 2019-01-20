@@ -78,3 +78,4 @@ require.searchCache = function (moduleName, callback) {
 };
 
 module.exports = require.decache;
+module.exports.default = require.decache;
