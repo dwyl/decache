@@ -63,6 +63,6 @@ Note that native modules with the `.node` extension are ignored from decaching b
 they behave unexpectedly when decached.
 
 If you have any questions or need more examples, please create a GitHub issue:
-https://github.com/nelsonic/decache/issues
+https://github.com/dwyl/decache/issues
 
 ***Thanks***!
