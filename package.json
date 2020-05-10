@@ -50,7 +50,10 @@
     "functions": 100,
     "branches": 100,
     "include": [
-      "decache.js"
+      "decache.js",
+      "setup.js",
+      "lib/mymodule/index.js",
+      "lib/othermodule.js"
     ],
     "exclude": [
       "test/test.js"
