@@ -40,10 +40,10 @@ npm install decache --save-dev
 
 ```js
 // require the decache module:
-var decache = require('decache');
+const decache = require('decache');
 
 // require a module that you wrote"
-var mymod = require('./mymodule.js');
+let mymod = require('./mymodule.js');
 
 // use your module the way you need to:
 console.log(mymod.count()); // 0   (the initial state for our counter is zero)
