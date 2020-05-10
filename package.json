@@ -4,9 +4,9 @@
   "description": "decache (Delete Cache) lets you delete modules from node.js require() cache; useful when testing your modules/projects.",
   "main": "decache.js",
   "scripts": {
-    "nocov": "./node_modules/tape/bin/tape ./test/test.js",
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*.js",
-    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*.js && ./node_modules/.bin/istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100"
+    "coverage": "nyc tape ./test/test.js && nyc check-coverage",
+    "nocov": "tape ./test/test.js",
+    "test": "nyc tape ./test/test.js | tap-nyc"
   },
   "repository": {
     "type": "git",
@@ -30,9 +30,10 @@
     "test": "test"
   },
   "devDependencies": {
-    "istanbul": "^0.4.5",
     "modern-syslog": "^1.2.0",
+    "nyc": "^15.0.1",
     "pre-commit": "^1.2.2",
+    "tap-nyc": "^1.0.3",
     "tap-spec": "^5.0.0",
     "tape": "^5.0.0"
   },
@@ -41,5 +42,25 @@
   ],
   "dependencies": {
     "callsite": "^1.0.0"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "include": [
+      "decache.js"
+    ],
+    "exclude": [
+      "test/test.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "cache": false,
+    "all": true,
+    "report-dir": "./coverage"
   }
 }
