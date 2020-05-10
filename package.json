@@ -34,7 +34,7 @@
     "modern-syslog": "^1.2.0",
     "pre-commit": "^1.2.2",
     "tap-spec": "^5.0.0",
-    "tape": "^4.9.1"
+    "tape": "^5.0.0"
   },
   "pre-commit": [
     "coverage"
