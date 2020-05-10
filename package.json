@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "istanbul": "^0.4.5",
-    "modern-syslog": "~1.1.4",
+    "modern-syslog": "^1.2.0",
     "pre-commit": "^1.2.2",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1"
