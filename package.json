@@ -1,6 +1,6 @@
 {
   "name": "decache",
-  "version": "4.6.0",
+  "version": "4.6.1",
   "description": "decache (Delete Cache) lets you delete modules from node.js require() cache; useful when testing your modules/projects.",
   "main": "decache.js",
   "scripts": {
@@ -31,11 +31,11 @@
   },
   "devDependencies": {
     "modern-syslog": "^1.2.0",
-    "nyc": "^15.0.1",
+    "nyc": "^15.1.0",
     "pre-commit": "^1.2.2",
     "tap-nyc": "^1.0.3",
     "tap-spec": "^5.0.0",
-    "tape": "^5.0.0"
+    "tape": "^5.3.2"
   },
   "pre-commit": [
     "coverage"

@@ -2,13 +2,12 @@
 
 Delete a module from node.js' `require.cache` so you can freshly `require` it again.
 
-[![Build Status](https://img.shields.io/travis/dwyl/decache/master.svg?style=flat-square)](https://travis-ci.org/dwyl/decache)
-[![codecov.io](https://img.shields.io/codecov/c/github/dwyl/decache/master.svg?style=flat-square)](http://codecov.io/github/dwyl/decache?branch=master)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/dwyl/decache/Node.js%20CI?style=flat-square)](https://github.com/dwyl/decache/actions)
+[![codecov.io](https://img.shields.io/codecov/c/github/dwyl/decache/main.svg?style=flat-square)](http://codecov.io/github/dwyl/decache?branch=main)
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/dwyl/decache.svg?style=flat-square)](https://github.com/dwyl/decache)
-[![Dependencies Status](https://david-dm.org/dwyl/decache/status.svg?style=flat-square)](https://david-dm.org/dwyl/decache)
-[![devDependencies Status](https://david-dm.org/dwyl/decache/dev-status.svg?style=flat-square)](https://david-dm.org/dwyl/decache?type=dev)
+[![dependency status](https://img.shields.io/librariesio/release/npm/decache?style=flat-square)](https://github.com/dwyl/decache/blob/main/package.json#L43)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/dwyl/decache/issues)
-[![HitCount](http://hits.dwyl.io/dwyl/decache.svg)](http://hits.dwyl.io/dwyl/decache)
+[![HitCount](http://hits.dwyl.com/dwyl/decache.svg)](http://hits.dwyl.com/dwyl/decache)
 
 In node.js when you `require()` a module, node stores a cached version of the
 module, so that all subsequent calls to `require()` do not have to reload
