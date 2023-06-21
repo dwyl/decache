@@ -5,7 +5,6 @@ Delete a module from node.js' `require.cache` so you can freshly `require` it ag
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/dwyl/decache/ci.yml?branch=main&label=build&style=flat-square)
 [![codecov.io](https://img.shields.io/codecov/c/github/dwyl/decache/main.svg?style=flat-square)](https://codecov.io/github/dwyl/decache?branch=main)
-[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/dwyl/decache.svg?style=flat-square)](https://github.com/dwyl/decache)
 [![dependency status](https://img.shields.io/librariesio/release/npm/decache?style=flat-square)](https://github.com/dwyl/decache/blob/main/package.json#L43)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/dwyl/decache/issues)
 [![HitCount](https://hits.dwyl.com/dwyl/decache.svg)](https://hits.dwyl.com/dwyl/decache)
