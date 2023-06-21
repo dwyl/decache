@@ -1,6 +1,6 @@
 {
   "name": "decache",
-  "version": "4.6.1",
+  "version": "4.6.2",
   "description": "decache (Delete Cache) lets you delete modules from node.js require() cache; useful when testing your modules/projects.",
   "main": "decache.js",
   "scripts": {
